@@ -78,7 +78,7 @@ function grammarChecks(text){const rules=[
 const $=id=>document.getElementById(id),esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const KEY='write-a-little-v1';let memoryOnly=false;
 function read(){try{return JSON.parse(localStorage.getItem(KEY))||{};}catch{return {};}}
-let saved=read();let state={topic:validTopic(saved.topic)?saved.topic:topics[0],plan:saved.plan||{},essay:typeof saved.essay==='string'?saved.essay:'',versions:Array.isArray(saved.versions)?saved.versions:[],history:Array.isArray(saved.history)?saved.history:[],level:saved.level||'foundation',endpoint:saved.endpoint||'',mode:saved.mode==='exam'?'exam':'practice',timing:saved.timing||null,review:null};
+let saved=read();let state={topic:validTopic(saved.topic)?saved.topic:topics[0],plan:saved.plan||{},essay:typeof saved.essay==='string'?saved.essay:'',versions:Array.isArray(saved.versions)?saved.versions:[],history:Array.isArray(saved.history)?saved.history:[],level:saved.level||'foundation',endpoint:saved.endpoint||'https://write-a-little-coach.pobbey.workers.dev',mode:saved.mode==='exam'?'exam':'practice',timing:saved.timing||null,review:null};
 let aiReady=false,accessCode='',hintLevel=0,seconds=1200,ticker=null,reviewing=false,toastTimer;
 function notify(msg){$('toast').textContent=msg;$('toast').hidden=false;clearTimeout(toastTimer);toastTimer=setTimeout(()=>$('toast').hidden=true,5000);}
 function persist(){try{localStorage.setItem(KEY,JSON.stringify({...state,review:null}));$('saveState').textContent='✓ 已儲存在這個瀏覽器';$('writeSave').textContent='✓ 已自動儲存';}catch{memoryOnly=true;$('saveState').textContent='儲存空間不可用，請匯出備份';$('writeSave').textContent='尚未儲存，請匯出備份';}}
