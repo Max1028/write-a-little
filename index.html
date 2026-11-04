@@ -8,6 +8,8 @@
 .exam-toolbar{padding:18px 26px 12px;border-bottom:1px solid var(--line);display:flex;gap:12px;align-items:center;flex-wrap:wrap;background:#fafbf7;border-radius:20px 20px 0 0;font-size:11px}.exam-toolbar select{padding:5px;border:1px solid var(--line);border-radius:5px;background:white;color:var(--ink)}.exam-toolbar p{width:100%;font-size:10px;color:var(--muted);margin:0}.exam-toolbar output{font-size:20px;font-weight:600;font-variant-numeric:tabular-nums}.exam-toolbar .urgent{color:#b25a43}.essay:read-only{background-color:#f4f5ee;color:#7a8478}@media(max-width:720px){.exam-toolbar{padding:16px 20px;gap:9px}.exam-toolbar select{max-width:150px}}
 
 .intro{margin-bottom:22px}.intro h1{font-size:27px}.eyebrow{display:none}.workspace{grid-template-columns:390px minmax(0,1fr)}.simple-start{padding:15px 26px;display:flex;align-items:center;justify-content:space-between;gap:12px;border-bottom:1px solid var(--line)}.simple-start button{font-size:11px}.simple-start button:last-child{display:none}.learn{margin-bottom:16px}.topic-card .topic-pills{margin:12px 0}.topic-card h2{font-size:23px}.service-note{background:#f5f0e4;border-radius:8px;padding:10px 13px;color:#866f43;font-size:11px;margin-bottom:16px}.examples details{margin:12px 0;border:1px solid var(--line);border-radius:9px;padding:12px}.examples summary{cursor:pointer;color:var(--green);font-size:12px;font-weight:600}.example-text{font:15px/1.9 Georgia,serif;margin:14px 0;color:#3d574a}.example-text p{margin:0 0 18px}.example-note{font-size:11px;border-left:2px solid #bdcdb6;padding:4px 0 4px 10px;margin:14px 0}.example-note b{display:block}.example-note q{font:13px/1.6 Georgia,serif;display:block;margin:5px 0}.example-meta{font-size:10px;color:var(--muted);margin-top:10px}.sentence-pair{border:1px solid var(--line);border-radius:12px;padding:16px;margin:14px 0}.sentence-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.sentence-grid>div{padding:12px;background:#f7f9f4;border-radius:8px;overflow-wrap:anywhere}.sentence-grid p{font:15px/1.8 Georgia,serif;white-space:pre-wrap;margin:5px 0}.sentence-grid .original{background:#fcf0eb}.sentence-grid .revised{background:#eff6ec}.sentence-pair .small{margin-top:10px}.sentence-pair button{margin-top:5px}.service-note.connected{background:#eaf4e7;color:#44683e}.comparison-heading{font-size:17px;margin:26px 0 8px}#outlineDetails{display:none}.essay{min-height:430px}.panel-title h2{font-size:19px}.topic-card .gentle-note{display:none}@media(max-width:950px){.workspace{grid-template-columns:320px minmax(0,1fr)}.intro h1{font-size:24px}.simple-start{flex-wrap:wrap;padding:12px 20px}.sentence-grid{grid-template-columns:1fr}}@media(max-width:720px){.workspace{display:block}.intro h1{font-size:23px}.topic-card{padding:20px}.example-text{font-size:15px}.examples details{padding:10px}.essay{min-height:330px}.intro .session-badge{display:none}.topic-card #topicText{font-size:13px}}
+
+.topic-actions{flex-wrap:wrap}#topicPicker{max-width:780px}#topicPicker .dialog-head h2{font-size:21px}.topic-filters{display:flex;gap:10px}.topic-filters input{flex:1;min-width:0}.topic-filters select{width:145px}.topic-list{display:grid;grid-template-columns:1fr 1fr;gap:9px;max-height:52vh;overflow-y:auto;padding:3px}.topic-choice{text-align:left;background:#fafbf7;border:1px solid var(--line);border-radius:10px;padding:12px 15px;color:var(--ink)}.topic-choice:hover{background:#edf4e9}.topic-choice strong{display:block;font-size:14px}.topic-choice span{font-size:10px;color:var(--muted)}.topic-choice[aria-current=true]{border-color:var(--green);background:#edf4e9}.example-reference{font-size:11px;color:#7e714f;background:#f7f3e9;border-radius:6px;padding:9px;margin-top:10px}@media(max-width:600px){.topic-list{grid-template-columns:1fr}.topic-filters{flex-direction:column}.topic-filters select{width:100%}.topic-choice{padding:12px}}
 </style></head>
 <body>
 <header class="topbar"><a href="#" class="brand" aria-label="慢慢寫首頁"><span class="brand-icon">w.</span><span>慢慢寫 <small>WRITE A LITTLE</small></span></a><nav aria-label="主要選單"><button class="nav active" data-view="practice">今日練習</button><button class="nav" data-view="history">我的進步</button><button class="icon-btn" id="settingsBtn" aria-label="開啟設定">⚙</button></nav></header>
@@ -15,7 +17,7 @@
 <section id="practiceView">
 <div class="intro"><div><p class="eyebrow">ONE THOUGHT. ONE SENTENCE. ONE STEP.</p><h1>看懂一個範例，寫好自己的文章。</h1><p class="muted">選題 → 看範例 → 動手寫。需要時再打開提示。</p></div><div class="session-badge"><span class="dot"></span><span id="serviceState">基本練習可用</span></div></div>
 <div class="workspace">
-<aside class="topic-card card"><div class="section-label">練習題目 <span id="topicCount"></span></div><div class="topic-pills"><span class="pill" id="topicType">觀點說明</span><span class="pill light" id="topicSource">模擬題</span></div><h2 id="topicTitle"></h2><p id="topicSubtitle" class="english"></p><div id="scene" hidden></div><p id="topicText"></p><div class="requirements" id="requirements"></div><p class="source-line" id="sourceLine"></p><div class="topic-actions"><button id="nextTopic" class="secondary">換一題 ↻</button><button id="newsTopic" class="secondary">時事靈感 ↗</button></div><details class="learn"><summary>不確定怎麼寫？先看架構</summary><div id="structureGuide"></div></details><div id="exampleArea"></div></aside>
+<aside class="topic-card card"><div class="section-label">練習題目 <span id="topicCount"></span></div><div class="topic-pills"><span class="pill" id="topicType">觀點說明</span><span class="pill light" id="topicSource">模擬題</span></div><h2 id="topicTitle"></h2><p id="topicSubtitle" class="english"></p><div id="scene" hidden></div><p id="topicText"></p><div class="requirements" id="requirements"></div><p class="source-line" id="sourceLine"></p><div class="topic-actions"><button id="nextTopic" class="secondary">換一題 ↻</button><button id="browseTopics" class="secondary">選題（60題）</button><button id="newsTopic" class="secondary">時事靈感 ↗</button></div><details class="learn"><summary>不確定怎麼寫？先看架構</summary><div id="structureGuide"></div></details><div id="exampleArea"></div></aside>
 <section class="writing-card card"><div class="exam-toolbar"><label>模式 <select id="mode"><option value="practice">練習：可看提示</option><option value="exam">限時模考：無提示</option></select></label><label>作文練習 <select id="timeBudget"><option value="15">15 分鐘</option><option value="20" selected>20 分鐘</option><option value="25">25 分鐘</option><option value="30">30 分鐘</option></select></label><button id="timerBtn" class="secondary">開始計時</button><output id="timer" aria-live="off">20:00</output><p id="timePhase">含審題、提綱、寫作與檢查；這是練習配置，非官方作文獨立時限。</p></div><div class="simple-start"><strong>寫你的作文</strong><button class="text-btn" data-step="plan">不知道怎麼開始？看提綱提示</button><button class="text-btn" data-step="write">回到寫作</button></div><div id="planPanel" class="panel"><div class="panel-title"><div><h2>先整理想法，就不怕空白。</h2><p class="muted">中文或英文都可以。這是提綱，不是要交出去的作文。</p></div><span class="tiny-badge">總 → 分 → 總</span></div><div id="planFields"></div><div class="panel-bottom"><span class="save-state" id="saveState">草稿只保存在這個瀏覽器</span><button class="primary" id="startWriting">回到作文 →</button></div></div>
 <div id="writePanel" class="panel" hidden><div class="service-note" id="liveFeedbackNote">AI 逐句批改尚未連線。目前可檢查字數、段落與部分文法規則。</div><div id="deadlineNotice" class="hint-box" hidden>已交卷，限時稿已保存，內容已鎖定。<button id="afterExam" class="text-btn">進入考後修改（不計入限時成績） →</button></div><details id="outlineDetails"><summary>看我的提綱</summary><div id="outlinePreview"></div></details><label for="essay" class="sr-only">英文作文</label><textarea id="essay" class="essay" lang="en" placeholder="Start with one clear idea…&#10;&#10;先寫你最確定的一句，慢慢完成它。" maxlength="10000" spellcheck="true"></textarea><div class="editor-meta"><span><strong id="wordCount">0</strong> words · <span id="paraCount">0</span> 段</span><span id="writeSave" class="save-state">自動存稿</span></div><div id="hintArea"><button id="hintBtn" class="text-btn">✧ 給我一點提示</button><div id="hintBox" class="hint-box" hidden></div></div><div class="panel-bottom"><button class="secondary" id="backPlan">需要提綱提示？</button><button class="primary" id="reviewBtn">檢查這篇作文 →</button></div><p class="privacy-note">基本檢查不會上傳文章；使用 AI 批改前會再次說明傳送內容。</p></div>
 <div id="reviewPanel" class="panel" hidden><div id="reviewContent"></div><div class="panel-bottom"><button class="secondary" id="reviseBtn">← 回去自己修改</button><button class="primary" id="finishBtn">保存這次練習 ✓</button></div></div>
@@ -24,7 +26,7 @@
 </section>
 <section id="historyView" hidden><p class="eyebrow">YOUR SMALL WINS</p><h1>每一次修改，都算進步。</h1><p class="muted">看初稿、看修改，也看自己是否能獨立寫出來。AI 估分不等於正式成績。</p><div id="stats" class="stats"></div><div id="historyList"></div><div class="history-actions"><button id="exportBtn" class="secondary">匯出練習備份</button><label class="secondary file-label">匯入備份<input id="importFile" type="file" accept="application/json" hidden></label></div></section>
 </main><footer><span>慢慢寫 · Write a Little</span><span>練習題為模擬題，非考題預測。<a href="https://www.ceec.edu.tw/" target="_blank" rel="noopener">大考中心 ↗</a></span></footer>
-<dialog id="settings"><form method="dialog"><div class="dialog-head"><h2>簡單設定</h2><button class="icon-btn" aria-label="關閉設定">×</button></div></form><label>練習難度<select id="level"><option value="foundation">打底：先寫對、寫完整</option><option value="standard">標準：補理由、練組織</option><option value="challenge">進階：論述與表達變化</option></select></label><label>AI 服務網址（家長設定，選填）<input id="endpoint" type="url" placeholder="同站服務免填；GitHub Pages 請填後端網址"></label><label>家庭存取碼（不會永久儲存）<input id="accessCode" type="password" autocomplete="off" placeholder="由家長設定的後端存取碼"></label><p class="muted small">不需要輸入 API 金鑰。金鑰只能放在伺服器。作文與紀錄預設存在本機；清除瀏覽器資料會遺失，請定期匯出。</p><button id="saveSettings" class="primary">儲存設定</button><details><summary>資料管理</summary><p>這會移除這個瀏覽器內的草稿與紀錄，建議先匯出備份。</p><button id="clearData" class="danger">清除本機練習資料</button></details></dialog>
+<dialog id="topicPicker"><form method="dialog"><div class="dialog-head"><h2>選一題開始練習</h2><button class="icon-btn" aria-label="關閉題庫">×</button></div></form><p class="small muted">60道不同情境的模擬題，皆有兩段寫作任務。可隨時回來複習。</p><div class="topic-filters"><input id="topicSearch" type="search" aria-label="搜尋作文題目" placeholder="搜尋主題，例如：朋友、手機、暑假"><select id="topicCategory" aria-label="題目主題分類"><option value="">全部主題</option></select></div><p id="topicResultCount" class="small muted" role="status"></p><div id="topicList" class="topic-list"></div></dialog><dialog id="settings"><form method="dialog"><div class="dialog-head"><h2>簡單設定</h2><button class="icon-btn" aria-label="關閉設定">×</button></div></form><label>練習難度<select id="level"><option value="foundation">打底：先寫對、寫完整</option><option value="standard">標準：補理由、練組織</option><option value="challenge">進階：論述與表達變化</option></select></label><label>AI 服務網址（家長設定，選填）<input id="endpoint" type="url" placeholder="同站服務免填；GitHub Pages 請填後端網址"></label><label>家庭存取碼（不會永久儲存）<input id="accessCode" type="password" autocomplete="off" placeholder="由家長設定的後端存取碼"></label><p class="muted small">不需要輸入 API 金鑰。金鑰只能放在伺服器。作文與紀錄預設存在本機；清除瀏覽器資料會遺失，請定期匯出。</p><button id="saveSettings" class="primary">儲存設定</button><details><summary>資料管理</summary><p>這會移除這個瀏覽器內的草稿與紀錄，建議先匯出備份。</p><button id="clearData" class="danger">清除本機練習資料</button></details></dialog>
 <dialog id="aiConsent"><h2>使用 AI 寫作教練？</h2><p>這次會把題目、提綱、作文與同次練習的前稿傳到你設定的服務，再由 Google Gemini 分析。請不要寫入姓名、學校或其他私人資料。</p><p class="muted">AI 可能判斷錯誤；回饋與估分都供練習參考。Gemini 免費服務的資料使用方式依 Google 當期條款。你也可以只做基本檢查。</p><div class="dialog-actions"><button id="basicOnly" class="secondary">只做基本檢查</button><button id="confirmAI" class="primary">傳送並批改</button></div></dialog>
 <div id="toast" class="toast" role="status" aria-live="polite" hidden></div><script type="module">const topics = [
  {id:'ai',title:'AI，是幫手還是捷徑？',subtitle:'A helper, or a shortcut?',type:'觀點說明',kind:'opinion',icons:['📖','✦','💬'],text:'越來越多學生使用 AI 學英文。請描述這種學習現象，再說明你的看法與適當的使用原則。',tasks:['第一段：描述使用情形，加入具體細節。','第二段：提出看法，用理由與例子支持。']},
@@ -36,6 +38,740 @@
  {id:'food',title:'午餐之後，剩下什麼？',subtitle:'A little less food waste.',type:'問題與對策',kind:'opinion',icons:['🍱','↘','🌱'],text:'學校午餐有時會產生剩食。請描述可能原因，並提出你認為可行的改善方式。',tasks:['第一段：描述問題，說明可能的原因。','第二段：提出方法，用細節說明如何執行。']},
  {id:'team',title:'一個人快，一群人遠？',subtitle:'Finding a better way to work together.',type:'比較與選擇',kind:'opinion',icons:['✍','↔','👥'],text:'有人喜歡獨立完成作業，有人偏好分組合作。請比較兩種方式，並根據自己的經驗說明偏好。',tasks:['第一段：比較獨立與合作的優點或困難。','第二段：表達偏好，加入具體經驗支持。']}
 ];
+
+const expandedTopics=[
+ {
+  "id": "library",
+  "category": "校園",
+  "type": "問題與對策",
+  "title": "圖書館有點吵",
+  "subtitle": "A quiet place to think",
+  "text": "圖書館有人討論報告，也有人需要安靜自習。請說明衝突，提出兼顧兩者的方法。",
+  "tasks": [
+   "第一段：描述兩種需求與一個衝突情境。",
+   "第二段：提出分區或其他方法，解釋如何兼顧需求。"
+  ],
+  "kind": "opinion",
+  "exampleId": "food"
+ },
+ {
+  "id": "uniform",
+  "category": "校園",
+  "type": "比較與選擇",
+  "title": "制服還是便服？",
+  "subtitle": "What should we wear to school?",
+  "text": "有的學校規定制服，有的允許便服。請比較兩種安排，說明你的選擇。",
+  "tasks": [
+   "第一段：比較制服與便服帶來的便利及限制。",
+   "第二段：表達偏好，用理由與具體例子支持。"
+  ],
+  "kind": "opinion",
+  "exampleId": "phones"
+ },
+ {
+  "id": "club",
+  "category": "校園",
+  "type": "觀點說明",
+  "title": "社團值得花時間嗎？",
+  "subtitle": "Making time for a club",
+  "text": "有人認為考試前應減少社團活動，也有人認為社團能幫助成長。請說明不同看法及你的立場。",
+  "tasks": [
+   "第一段：說明兩方主要考量。",
+   "第二段：提出立場，用經驗或例子解釋如何分配時間。"
+  ],
+  "kind": "opinion",
+  "exampleId": "ai"
+ },
+ {
+  "id": "classroom",
+  "category": "校園",
+  "type": "問題與對策",
+  "title": "教室整潔誰負責？",
+  "subtitle": "Sharing a classroom",
+  "text": "班級打掃常由少數同學完成。請說明可能原因，提出改善合作的方法。",
+  "tasks": [
+   "第一段：描述分工不均的情形及影響。",
+   "第二段：提出可執行的改善方式，解釋為什麼有效。"
+  ],
+  "kind": "opinion",
+  "exampleId": "food"
+ },
+ {
+  "id": "election",
+  "category": "校園",
+  "type": "比較與選擇",
+  "title": "你會選哪種班長？",
+  "subtitle": "Choosing a class leader",
+  "text": "兩位班長候選人，一位善於提出新點子，一位擅長溝通與執行。請比較特質並作出選擇。",
+  "tasks": [
+   "第一段：說明兩種特質在班級管理中的作用。",
+   "第二段：選擇你較重視的特質，加入具體情境支持。"
+  ],
+  "kind": "opinion",
+  "exampleId": "phones"
+ },
+ {
+  "id": "phonebox",
+  "category": "校園",
+  "type": "觀點說明",
+  "title": "上課前手機集中保管？",
+  "subtitle": "Phones during lessons",
+  "text": "學校考慮上課前集中保管手機。請描述這項安排可能帶來的改變，並表達看法。",
+  "tasks": [
+   "第一段：說明安排對課堂的可能影響。",
+   "第二段：提出支持、反對或附條件支持的立場與理由。"
+  ],
+  "kind": "opinion",
+  "exampleId": "ai"
+ },
+ {
+  "id": "reading",
+  "category": "學習",
+  "type": "比較與選擇",
+  "title": "紙本書與電子書",
+  "subtitle": "Turning pages or tapping screens",
+  "text": "閱讀可以選擇紙本書或電子書。請比較兩者，說明你在某種情境下的選擇。",
+  "tasks": [
+   "第一段：比較閱讀體驗、攜帶或專注方面的差異。",
+   "第二段：交代使用情境，解釋你的選擇及理由。"
+  ],
+  "kind": "opinion",
+  "exampleId": "phones"
+ },
+ {
+  "id": "procrastinate",
+  "category": "學習",
+  "type": "問題與對策",
+  "title": "明天再寫，真的比較好？",
+  "subtitle": "Breaking the habit of delay",
+  "text": "學生有時會把作業拖到最後一刻。請描述拖延的原因及後果，再提出改變方法。",
+  "tasks": [
+   "第一段：說明可能原因與一個具體後果。",
+   "第二段：提出一至兩項方法，描述如何實際執行。"
+  ],
+  "kind": "opinion",
+  "exampleId": "food"
+ },
+ {
+  "id": "mistakes",
+  "category": "學習",
+  "type": "觀點說明",
+  "title": "錯題本該怎麼用？",
+  "subtitle": "Learning from a wrong answer",
+  "text": "有人把訂正視為抄正確答案，有人會分析錯誤原因。請描述差異並說明你認為有效的做法。",
+  "tasks": [
+   "第一段：描述兩種訂正方式與學習上的差異。",
+   "第二段：提出你的做法，用一個例子說明如何運用。"
+  ],
+  "kind": "opinion",
+  "exampleId": "ai"
+ },
+ {
+  "id": "remote",
+  "category": "學習",
+  "type": "比較與選擇",
+  "title": "在教室，還是在家上課？",
+  "subtitle": "Two ways to attend class",
+  "text": "實體與線上課程各有特色。請比較互動及時間安排，說明哪種較適合你。",
+  "tasks": [
+   "第一段：描述兩種上課方式的優點與困難。",
+   "第二段：表達個人選擇，說明適合自己的原因。"
+  ],
+  "kind": "opinion",
+  "exampleId": "phones"
+ },
+ {
+  "id": "feedback",
+  "category": "學習",
+  "type": "觀點說明",
+  "title": "成績之外，我需要什麼回饋？",
+  "subtitle": "More than a score",
+  "text": "一次考試後，學生可能只看到分數，也可能收到詳細建議。請說明差異，表達你希望獲得的回饋。",
+  "tasks": [
+   "第一段：比較只有分數與有具體建議的情況。",
+   "第二段：說明你需要什麼回饋及如何用它改進。"
+  ],
+  "kind": "opinion",
+  "exampleId": "ai"
+ },
+ {
+  "id": "peer",
+  "category": "學習",
+  "type": "問題與對策",
+  "title": "讀書會為何變聊天會？",
+  "subtitle": "Making a study group work",
+  "text": "一群朋友約好一起讀書，卻常聊到忘記進度。請描述原因，設計一個有效的讀書會安排。",
+  "tasks": [
+   "第一段：說明可能的干擾及對學習的影響。",
+   "第二段：提出流程或分工，解釋如何確認有達成目標。"
+  ],
+  "kind": "opinion",
+  "exampleId": "food"
+ },
+ {
+  "id": "privacy",
+  "category": "科技",
+  "type": "觀點說明",
+  "title": "方便與隱私怎麼選？",
+  "subtitle": "Convenience and personal privacy",
+  "text": "某個免費應用程式要求位置與聯絡人資料。請說明你會考量什麼，再表達使用原則。",
+  "tasks": [
+   "第一段：描述便利與資料分享之間的取捨。",
+   "第二段：提出你的判斷原則，加入具體例子。"
+  ],
+  "kind": "opinion",
+  "exampleId": "ai"
+ },
+ {
+  "id": "shortvideo",
+  "category": "科技",
+  "type": "現象與影響",
+  "title": "一支接一支的短影音",
+  "subtitle": "Just one more video",
+  "text": "有些人原本只想看幾分鐘短影音，卻不知不覺花了很久。請描述現象，說明可能影響。",
+  "tasks": [
+   "第一段：描寫一個連續觀看的生活情境。",
+   "第二段：分析原因與影響，提出你自己的看法。"
+  ],
+  "kind": "opinion",
+  "exampleId": "pets"
+ },
+ {
+  "id": "fakenews",
+  "category": "科技",
+  "type": "問題與對策",
+  "title": "轉傳之前先想一想",
+  "subtitle": "Before you share a message",
+  "text": "群組收到一則令人驚訝卻沒有來源的消息。請描述盲目轉傳的問題，提出查證方法。",
+  "tasks": [
+   "第一段：說明未查證轉傳可能造成的影響。",
+   "第二段：提出可行的查證步驟，解釋何時應暫停分享。"
+  ],
+  "kind": "opinion",
+  "exampleId": "food"
+ },
+ {
+  "id": "robot",
+  "category": "科技",
+  "type": "比較與選擇",
+  "title": "服務由機器還是人提供？",
+  "subtitle": "A machine or a person?",
+  "text": "有些商店使用自助機，有些保留人工服務。請比較兩種體驗，說明你在特定情境下的偏好。",
+  "tasks": [
+   "第一段：比較便利性、溝通與協助上的差異。",
+   "第二段：交代情境，提出偏好與理由。"
+  ],
+  "kind": "opinion",
+  "exampleId": "phones"
+ },
+ {
+  "id": "detox",
+  "category": "科技",
+  "type": "觀點說明",
+  "title": "一天不用社群平台",
+  "subtitle": "A day away from social media",
+  "text": "有人嘗試一天不使用社群平台。請說明可能遇到的改變，表達你是否願意嘗試及原因。",
+  "tasks": [
+   "第一段：描述少用社群可能帶來的便利與不便。",
+   "第二段：說明你的選擇、理由及具體安排。"
+  ],
+  "kind": "opinion",
+  "exampleId": "ai"
+ },
+ {
+  "id": "friendship",
+  "category": "人際",
+  "type": "觀點說明",
+  "title": "好朋友一定要每天聊天嗎？",
+  "subtitle": "Staying close from a distance",
+  "text": "朋友可能因忙碌而減少聯絡。請說明維持友誼的重要因素，表達你的看法。",
+  "tasks": [
+   "第一段：描述聯絡頻率改變時可能出現的情形。",
+   "第二段：說明你認為維持友誼最重要的因素與例子。"
+  ],
+  "kind": "opinion",
+  "exampleId": "ai"
+ },
+ {
+  "id": "conflict",
+  "category": "人際",
+  "type": "問題與對策",
+  "title": "分組意見不合怎麼辦？",
+  "subtitle": "When a team disagrees",
+  "text": "小組成員對報告方向有不同想法，討論逐漸變成爭執。請分析問題並提出處理方法。",
+  "tasks": [
+   "第一段：描述衝突情境及可能原因。",
+   "第二段：提出溝通步驟，解釋如何促成共同決定。"
+  ],
+  "kind": "opinion",
+  "exampleId": "food"
+ },
+ {
+  "id": "kindness",
+  "category": "人際",
+  "type": "觀點說明",
+  "title": "幫忙之前，要先問嗎？",
+  "subtitle": "Offering help with respect",
+  "text": "熱心幫忙有時未必符合對方需要。請描述可能情境，說明你認為合適的幫助方式。",
+  "tasks": [
+   "第一段：描寫一個好意可能造成困擾的情境。",
+   "第二段：提出原則，以例子說明如何尊重對方。"
+  ],
+  "kind": "opinion",
+  "exampleId": "ai"
+ },
+ {
+  "id": "familytime",
+  "category": "人際",
+  "type": "比較與選擇",
+  "title": "相處時間多，還是品質好？",
+  "subtitle": "Making family time count",
+  "text": "家人可以長時間待在同一空間，也可以安排短暫但專心的相處。請比較並表達看法。",
+  "tasks": [
+   "第一段：說明兩種相處方式的差異。",
+   "第二段：提出你認為有意義的安排與理由。"
+  ],
+  "kind": "opinion",
+  "exampleId": "phones"
+ },
+ {
+  "id": "reusable",
+  "category": "環境",
+  "type": "問題與對策",
+  "title": "忘了帶環保杯",
+  "subtitle": "A habit beyond good intentions",
+  "text": "有人認同減少一次性用品，卻經常忘記攜帶替代品。請描述落差，提出讓習慣持續的方法。",
+  "tasks": [
+   "第一段：說明知道與做到之間的困難。",
+   "第二段：提出具體方法，說明如何融入日常。"
+  ],
+  "kind": "opinion",
+  "exampleId": "food"
+ },
+ {
+  "id": "transport",
+  "category": "環境",
+  "type": "比較與選擇",
+  "title": "上學路怎麼選？",
+  "subtitle": "Choosing a way to school",
+  "text": "同學上學可能搭公車、騎自行車或由家人接送。請選兩種比較，說明你的選擇。",
+  "tasks": [
+   "第一段：比較兩種交通方式的時間、便利或環境影響。",
+   "第二段：依自己的條件作出選擇，提出理由。"
+  ],
+  "kind": "opinion",
+  "exampleId": "phones"
+ },
+ {
+  "id": "repair",
+  "category": "環境",
+  "type": "比較與選擇",
+  "title": "壞了就換，還是先修？",
+  "subtitle": "Repair or replace?",
+  "text": "一件常用物品壞掉時，可以修理或買新的。請比較兩種選擇並說明你的判斷方式。",
+  "tasks": [
+   "第一段：比較花費、時間及資源利用。",
+   "第二段：以一件物品為例，說明你會如何選擇。"
+  ],
+  "kind": "opinion",
+  "exampleId": "phones"
+ },
+ {
+  "id": "greenspace",
+  "category": "環境",
+  "type": "觀點說明",
+  "title": "空地要蓋停車場還是公園？",
+  "subtitle": "What should an empty lot become?",
+  "text": "社區有一塊空地，有人提議設停車場，有人希望保留綠地。請說明需求並表達立場。",
+  "tasks": [
+   "第一段：描述兩種提議希望解決的問題。",
+   "第二段：提出立場，加入理由及具體使用情境。"
+  ],
+  "kind": "opinion",
+  "exampleId": "ai"
+ },
+ {
+  "id": "recycle",
+  "category": "環境",
+  "type": "問題與對策",
+  "title": "回收桶旁的混亂",
+  "subtitle": "Sorting waste more clearly",
+  "text": "公共回收桶常混入不適合回收的垃圾。請說明可能原因，提出讓分類更容易的方法。",
+  "tasks": [
+   "第一段：描述混亂情形及可能原因。",
+   "第二段：提出標示或其他改善方法，解釋預期作用。"
+  ],
+  "kind": "opinion",
+  "exampleId": "food"
+ },
+ {
+  "id": "voluntary",
+  "category": "社會",
+  "type": "觀點說明",
+  "title": "服務時數一定有意義嗎？",
+  "subtitle": "Hours or meaningful service?",
+  "text": "學校鼓勵學生參與社區服務。請說明只追求時數與認真參與的差異，表達你的看法。",
+  "tasks": [
+   "第一段：描述兩種參與方式與可能結果。",
+   "第二段：說明如何讓服務真正有意義，加入例子。"
+  ],
+  "kind": "opinion",
+  "exampleId": "ai"
+ },
+ {
+  "id": "priorityseat",
+  "category": "社會",
+  "type": "問題與對策",
+  "title": "看不見的需要",
+  "subtitle": "Not every need is visible",
+  "text": "搭乘大眾運輸時，有些人的身體不適不容易從外表看出。請說明可能誤解，提出尊重的互動方式。",
+  "tasks": [
+   "第一段：描述一個可能發生誤解的情境。",
+   "第二段：提出表達需要或提供協助的方法與理由。"
+  ],
+  "kind": "opinion",
+  "exampleId": "food"
+ },
+ {
+  "id": "localshop",
+  "category": "社會",
+  "type": "比較與選擇",
+  "title": "網購與街角小店",
+  "subtitle": "Shopping online or nearby",
+  "text": "購物可以在線上完成，也可以到社區商店。請比較兩種方式，說明特定情況下的選擇。",
+  "tasks": [
+   "第一段：比較便利、互動或挑選商品的差異。",
+   "第二段：以一次購物需求為例，提出選擇與理由。"
+  ],
+  "kind": "opinion",
+  "exampleId": "phones"
+ },
+ {
+  "id": "publicspace",
+  "category": "社會",
+  "type": "問題與對策",
+  "title": "公園是誰的休息空間？",
+  "subtitle": "Sharing a public park",
+  "text": "有人在公園運動，有人想安靜休息，使用需求可能衝突。請描述情形，提出共用空間的方法。",
+  "tasks": [
+   "第一段：說明不同使用者的需求及衝突。",
+   "第二段：提出可行安排，解釋如何兼顧不同的人。"
+  ],
+  "kind": "opinion",
+  "exampleId": "food"
+ },
+ {
+  "id": "community",
+  "category": "社會",
+  "type": "觀點說明",
+  "title": "鄰居之間需要多熟？",
+  "subtitle": "Knowing the people nearby",
+  "text": "有人和鄰居經常互動，有人較重視私人空間。請描述差異，說明你理想中的鄰里關係。",
+  "tasks": [
+   "第一段：比較兩種互動方式與可能感受。",
+   "第二段：提出你重視的原則，用生活例子支持。"
+  ],
+  "kind": "opinion",
+  "exampleId": "ai"
+ },
+ {
+  "id": "sleep",
+  "category": "健康",
+  "type": "問題與對策",
+  "title": "少睡一點，能多讀一點？",
+  "subtitle": "Finding time for rest",
+  "text": "考試前，有些學生熬夜讀書，隔天卻精神不佳。請描述這種情況，提出時間安排的改善方法。",
+  "tasks": [
+   "第一段：描寫讀書時間與休息衝突的情境。",
+   "第二段：提出可行的安排，解釋如何觀察是否有效。"
+  ],
+  "kind": "opinion",
+  "exampleId": "food"
+ },
+ {
+  "id": "exercise",
+  "category": "健康",
+  "type": "比較與選擇",
+  "title": "自己運動還是找伴？",
+  "subtitle": "Moving alone or together",
+  "text": "運動可以自己安排，也可以和朋友一起進行。請比較兩種方式，說明哪種較能讓你持續。",
+  "tasks": [
+   "第一段：比較自由度、動力與配合上的差異。",
+   "第二段：表達選擇，加入具體安排與理由。"
+  ],
+  "kind": "opinion",
+  "exampleId": "phones"
+ },
+ {
+  "id": "breaks",
+  "category": "健康",
+  "type": "觀點說明",
+  "title": "休息是不是浪費時間？",
+  "subtitle": "Taking a useful break",
+  "text": "有人讀書時不願休息，有人固定短暫離開座位。請說明不同習慣，表達你的做法。",
+  "tasks": [
+   "第一段：描述兩種讀書與休息方式。",
+   "第二段：說明你的安排，用例子支持其作用。"
+  ],
+  "kind": "opinion",
+  "exampleId": "ai"
+ },
+ {
+  "id": "stress",
+  "category": "健康",
+  "type": "問題與對策",
+  "title": "考前焦慮時，我能做什麼？",
+  "subtitle": "Facing a busy exam week",
+  "text": "考試與作業集中時，學生可能感到壓力。請描述一個情境，提出日常可行的調整方式。",
+  "tasks": [
+   "第一段：交代壓力來源及對日常的影響。",
+   "第二段：提出可執行的調整方法，說明何時會尋求協助。"
+  ],
+  "kind": "opinion",
+  "exampleId": "food"
+ },
+ {
+  "id": "festival",
+  "category": "文化",
+  "type": "比較與選擇",
+  "title": "節慶要怎麼過？",
+  "subtitle": "Celebrating in different ways",
+  "text": "有人依傳統方式過節，有人喜歡新的慶祝形式。請比較兩者，說明你希望保留或改變的部分。",
+  "tasks": [
+   "第一段：描述兩種慶祝方式與重視的事情。",
+   "第二段：提出你的選擇，解釋理由並舉例。"
+  ],
+  "kind": "opinion",
+  "exampleId": "phones"
+ },
+ {
+  "id": "travel",
+  "category": "文化",
+  "type": "比較與選擇",
+  "title": "旅行要排滿，還是留白？",
+  "subtitle": "Planning a trip with room to explore",
+  "text": "旅行時有人安排密集行程，有人喜歡放慢步調。請比較兩種方式並說明偏好。",
+  "tasks": [
+   "第一段：描述兩種行程安排的特色與限制。",
+   "第二段：表達你的選擇，用一次實際或想像旅行支持。"
+  ],
+  "kind": "opinion",
+  "exampleId": "phones"
+ },
+ {
+  "id": "exchange",
+  "category": "文化",
+  "type": "觀點說明",
+  "title": "向外國朋友介紹家鄉",
+  "subtitle": "A place worth introducing",
+  "text": "一位交換學生想了解你的家鄉。請選一個地方或活動介紹，說明你選它的原因。",
+  "tasks": [
+   "第一段：描述地方或活動的特色與具體細節。",
+   "第二段：說明它為何值得介紹，以及希望對方理解什麼。"
+  ],
+  "kind": "opinion",
+  "exampleId": "ai"
+ },
+ {
+  "id": "museum",
+  "category": "文化",
+  "type": "問題與對策",
+  "title": "博物館如何吸引學生？",
+  "subtitle": "Making a museum visit meaningful",
+  "text": "有人覺得博物館有趣，有人覺得只是在看說明牌。請描述落差，提出讓參觀更有意義的方法。",
+  "tasks": [
+   "第一段：說明學生可能感到投入或無聊的原因。",
+   "第二段：提出活動或展示安排，解釋它如何幫助理解。"
+  ],
+  "kind": "opinion",
+  "exampleId": "food"
+ },
+ {
+  "id": "future",
+  "category": "生涯",
+  "type": "觀點說明",
+  "title": "選科系，興趣還是出路？",
+  "subtitle": "Choosing a path after school",
+  "text": "選擇大學科系時，有人優先考量興趣，有人重視未來工作。請描述考量並說明你的判斷原則。",
+  "tasks": [
+   "第一段：說明兩種考量各自重視什麼。",
+   "第二段：提出你的取捨方式，加入具體例子。"
+  ],
+  "kind": "opinion",
+  "exampleId": "ai"
+ },
+ {
+  "id": "parttime",
+  "category": "生涯",
+  "type": "比較與選擇",
+  "title": "暑假打工或學新技能？",
+  "subtitle": "Making the most of a summer",
+  "text": "暑假可以安排打工，也可以參加課程學習技能。請比較兩者並說明你的選擇。",
+  "tasks": [
+   "第一段：比較可得到的經驗與需要付出的時間。",
+   "第二段：依自己的目標提出選擇與理由。"
+  ],
+  "kind": "opinion",
+  "exampleId": "phones"
+ },
+ {
+  "id": "success",
+  "category": "生涯",
+  "type": "觀點說明",
+  "title": "成功只有一種樣子嗎？",
+  "subtitle": "What does success mean to me?",
+  "text": "有些人以成績或收入衡量成功，有些人重視成長及對他人的幫助。請說明不同觀點並提出自己的定義。",
+  "tasks": [
+   "第一段：描述兩種衡量成功的方式。",
+   "第二段：提出你的定義，用具體情境支持。"
+  ],
+  "kind": "opinion",
+  "exampleId": "ai"
+ },
+ {
+  "id": "newskill",
+  "category": "生涯",
+  "type": "問題與對策",
+  "title": "三分鐘熱度怎麼辦？",
+  "subtitle": "Staying with a new skill",
+  "text": "學習新技能時，人們可能在遇到困難後失去動力。請描述原因，設計一個能持續的練習安排。",
+  "tasks": [
+   "第一段：描述從熱情到停滯的過程與原因。",
+   "第二段：提出具體練習安排與確認進步的方法。"
+  ],
+  "kind": "opinion",
+  "exampleId": "food"
+ },
+ {
+  "id": "missbus",
+  "category": "敘事",
+  "type": "情境故事",
+  "title": "錯過那班公車",
+  "subtitle": "A missed bus and an unexpected turn",
+  "text": "你要參加一項重要活動，卻錯過原本預計搭乘的公車。請敘述後續發展。",
+  "tasks": [
+   "第一段：交代活動、原本計畫與發現錯過車的情形。",
+   "第二段：描述採取的行動、結果與感受。"
+  ],
+  "kind": "story",
+  "exampleId": "rain"
+ },
+ {
+  "id": "lostitem",
+  "category": "敘事",
+  "type": "情境故事",
+  "title": "找到一件遺失物",
+  "subtitle": "Something left behind",
+  "text": "你在學校發現一件對失主可能很重要的物品。請想像尋找失主的過程與結果。",
+  "tasks": [
+   "第一段：描寫發現物品的場景及你作出的判斷。",
+   "第二段：敘述尋找失主的行動、結果與體會。"
+  ],
+  "kind": "story",
+  "exampleId": "rain"
+ },
+ {
+  "id": "wrongmessage",
+  "category": "敘事",
+  "type": "情境故事",
+  "title": "一則傳錯的訊息",
+  "subtitle": "A message sent to the wrong person",
+  "text": "你不小心把一則訊息傳給錯的人，造成誤會。請寫出事情如何發生及如何處理。",
+  "tasks": [
+   "第一段：交代訊息、對象與誤會的起因。",
+   "第二段：敘述你的處理方式、對方回應與結果。"
+  ],
+  "kind": "story",
+  "exampleId": "rain"
+ },
+ {
+  "id": "firststage",
+  "category": "敘事",
+  "type": "經驗敘事",
+  "title": "第一次站上舞台",
+  "subtitle": "My first moment on stage",
+  "text": "請敘述一次實際或想像的上台經驗，包含你面臨的困難與調整。",
+  "tasks": [
+   "第一段：描述活動背景、準備及上台時的困難。",
+   "第二段：敘述你如何應對、最後結果與感受。"
+  ],
+  "kind": "story",
+  "exampleId": "volunteer"
+ },
+ {
+  "id": "helpstranger",
+  "category": "敘事",
+  "type": "情境故事",
+  "title": "迷路旅人的一個問題",
+  "subtitle": "A question from a visitor",
+  "text": "一位旅人在路上向你問路，但你一開始無法清楚說明。請敘述你如何協助對方。",
+  "tasks": [
+   "第一段：描述相遇場景與溝通困難。",
+   "第二段：說明你採取的行動、結果及從中學到的事。"
+  ],
+  "kind": "story",
+  "exampleId": "rain"
+ },
+ {
+  "id": "projectfail",
+  "category": "敘事",
+  "type": "經驗敘事",
+  "title": "成果發表前的意外",
+  "subtitle": "A problem before the presentation",
+  "text": "小組即將發表成果時，才發現一個重要部分出錯。請敘述你們的反應及後續。",
+  "tasks": [
+   "第一段：交代發表內容與發現的問題。",
+   "第二段：描述小組的行動、最後結果與反思。"
+  ],
+  "kind": "story",
+  "exampleId": "volunteer"
+ },
+ {
+  "id": "apology",
+  "category": "敘事",
+  "type": "經驗敘事",
+  "title": "一句不容易說的對不起",
+  "subtitle": "Finding the courage to apologize",
+  "text": "請敘述一次你發現自己誤會別人的實際或想像經驗。",
+  "tasks": [
+   "第一段：交代誤會如何產生，以及你如何發現真相。",
+   "第二段：敘述你如何回應、關係的變化及體會。"
+  ],
+  "kind": "story",
+  "exampleId": "volunteer"
+ },
+ {
+  "id": "smallwin",
+  "category": "敘事",
+  "type": "經驗敘事",
+  "title": "終於做到的一件小事",
+  "subtitle": "A small achievement that mattered",
+  "text": "請敘述一件你原本做不到、後來透過練習完成的小事。",
+  "tasks": [
+   "第一段：交代目標、原本困難及開始練習的契機。",
+   "第二段：描述練習中的調整、成果與感受。"
+  ],
+  "kind": "story",
+  "exampleId": "volunteer"
+ },
+ {
+  "id": "newstudent",
+  "category": "人際",
+  "type": "問題與對策",
+  "title": "讓新同學找到歸屬感",
+  "subtitle": "Helping a new classmate feel welcome",
+  "text": "一位轉學生剛加入班級，不熟悉校園，也很少主動交談。請描述可能遇到的困難，提出友善的協助方式。",
+  "tasks": [
+   "第一段：描寫新同學可能面臨的日常困難。",
+   "第二段：提出具體行動，解釋如何尊重對方的步調。"
+  ],
+  "kind": "opinion",
+  "exampleId": "food"
+ }
+];
+const originalCategories={ai:'科技',phones:'校園',heat:'環境',pets:'社會',volunteer:'敘事',rain:'敘事',food:'環境',team:'學習'};
+for(const t of topics){t.category=originalCategories[t.id];t.exampleId=t.id;}
+topics.push(...expandedTopics);
 const opinionFields=[['opening','總｜破題與立場','這個主題最重要的是什麼？我的看法是什麼？','先直接回答題目，不用從「自古以來」開始。\n句型靈感：I believe … / In my opinion, …'],['reason1','分｜理由一＋解釋','為什麼這樣想？這個理由如何支持我的立場？','把「很好／很重要」說清楚：對誰有幫助？如何幫助？\n句型靈感：One reason is that …'],['reason2','分｜理由二＋具體例子','還有不同的理由嗎？我能舉什麼例子？','第二個理由要和第一個不同。選兩個說清楚，比列五個卻沒解釋更好。\n句型靈感：Another reason is … / For example, …'],['ending','總｜統整與結論','把理由收攏後，我最想讓讀者記住什麼？','回扣立場，可以提出建議；不要突然加入未討論的新理由。\n句型靈感：For these reasons, …']];
 const storyFields=[['opening','起｜背景與人物','什麼時候、在哪裡、誰在做什麼？','先交代能讓人看懂的背景。\n句型靈感：Last …, my friends and I …'],['reason1','承｜困難與轉折','原本期待什麼？發生了什麼意外？','把事件寫具體，選擇一個主要困難。\n句型靈感：At first, … / Suddenly, …'],['reason2','轉｜行動與結果','我採取了什麼行動？後來怎樣？','用事件順序串起來，而不是列舉不相干的事情。\n句型靈感：We decided to … / After that, …'],['ending','合｜感受與體會','這件事讓我有什麼感受或改變？','從故事自然帶出體會，不必硬塞大道理。\n句型靈感：This experience taught me …']];
 function words(s){return (s.match(/[A-Za-z]+(?:['’-][A-Za-z]+)*/g)||[]).length;}
@@ -78,14 +814,14 @@ function grammarChecks(text){const rules=[
 const $=id=>document.getElementById(id),esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const KEY='write-a-little-v1';let memoryOnly=false;
 function read(){try{return JSON.parse(localStorage.getItem(KEY))||{};}catch{return {};}}
-let saved=read();let state={topic:validTopic(saved.topic)?saved.topic:topics[0],plan:saved.plan||{},essay:typeof saved.essay==='string'?saved.essay:'',versions:Array.isArray(saved.versions)?saved.versions:[],history:Array.isArray(saved.history)?saved.history:[],level:saved.level||'foundation',endpoint:saved.endpoint||'https://write-a-little-coach.pobbey.workers.dev',mode:saved.mode==='exam'?'exam':'practice',timing:saved.timing||null,review:null};
+let saved=read();let state={topic:validTopic(saved.topic)?saved.topic:topics[0],plan:saved.plan||{},essay:typeof saved.essay==='string'?saved.essay:'',seenIds:Array.isArray(saved.seenIds)?saved.seenIds:[],versions:Array.isArray(saved.versions)?saved.versions:[],history:Array.isArray(saved.history)?saved.history:[],level:saved.level||'foundation',endpoint:saved.endpoint||'https://write-a-little-coach.pobbey.workers.dev',mode:saved.mode==='exam'?'exam':'practice',timing:saved.timing||null,review:null};
 let aiReady=false,accessCode='',hintLevel=0,seconds=1200,ticker=null,reviewing=false,toastTimer;
 function notify(msg){$('toast').textContent=msg;$('toast').hidden=false;clearTimeout(toastTimer);toastTimer=setTimeout(()=>$('toast').hidden=true,5000);}
 function persist(){try{localStorage.setItem(KEY,JSON.stringify({...state,review:null}));$('saveState').textContent='✓ 已儲存在這個瀏覽器';$('writeSave').textContent='✓ 已自動儲存';}catch{memoryOnly=true;$('saveState').textContent='儲存空間不可用，請匯出備份';$('writeSave').textContent='尚未儲存，請匯出備份';}}
 function fields(){return state.topic.kind==='story'?storyFields:opinionFields;}
 function renderTopic(){const t=state.topic;$('topicTitle').textContent=t.title;$('topicSubtitle').textContent=t.subtitle||'';$('topicType').textContent=t.type||'生活情境';$('topicSource').textContent=t.news?'時事改編模擬題':'考型模擬題（預設題庫）';$('topicText').textContent=t.text;$('topicCount').textContent=t.news?'NEWS':`${topics.findIndex(x=>x.id===t.id)+1} / ${topics.length}`;$('scene').innerHTML=`<div class="scene" aria-label="主題裝飾">${(t.icons||['✍','✦','💭']).map(x=>`<span aria-hidden="true">${esc(x)}</span>`).join('')}</div>`;$('requirements').innerHTML=`${t.tasks.map(x=>`<p>${esc(x)}</p>`).join('')}<p>練習目標：至少 120 字，兩段。</p>`;$('sourceLine').textContent='';if(t.news){const a=document.createElement('a');a.textContent=`新聞來源 · ${t.sourceDate||'日期未提供'}`;a.href=t.sourceUrl;a.target='_blank';a.rel='noopener';$('sourceLine').append(a);$('sourceLine').append(document.createTextNode(`｜取得：${new Date(t.fetchedAt).toLocaleString('zh-TW')}`));}$('structureGuide').innerHTML=t.kind==='story'?'<p>這題練「背景 → 困難 → 行動 → 結果」。敘事題不用硬套多項理由。段落仍依題目分工。</p>':'<p><b>總：破題與立場</b><br>分：理由＋解釋＋例子<br><b>總：統整並回扣主題</b><br>這是思考順序，不代表一定分三段；請依本題的兩段要求安排。</p>';
 $('planFields').innerHTML=fields().map(([key,title,placeholder,hint],i)=>`<div class="plan-item"><div class="field-heading"><label for="plan-${key}"><span>0${i+1}</span>${esc(title)}</label><button class="help-btn" data-hint="${key}" aria-expanded="false">給我提示</button></div><textarea id="plan-${key}" data-field="${key}" maxlength="1500" placeholder="${esc(placeholder)}">${esc(state.plan[key]||'')}</textarea><div id="help-${key}" class="hint-box" hidden>${esc(hint)}</div></div>`).join('');$('essay').value=state.essay;renderExamples();updateCounts();}
-function renderExamples(){const e=examples[state.topic.id]||examples.ai;const area=$('exampleArea');area.className='examples';area.hidden=state.mode==='exam';area.innerHTML=`<details><summary>📖 看完整兩段範例 · ${words(e.paragraphs.join(' '))} words</summary><p class="example-meta">${examples[state.topic.id]?'本題教學範例':'相近考型教學範例，非本題答案'} · 用來學寫法，請用自己的想法重寫。</p><div class="example-text">${e.paragraphs.map((p,i)=>`<p><span class="tag">第 ${i+1} 段</span><br>${esc(p)}</p>`).join('')}</div></details><details><summary>✧ 逐句拆解：範例為什麼這樣寫？</summary>${e.notes.map(([label,en,zh])=>`<div class="example-note"><b>${esc(label)}</b><q>${esc(en)}</q>${esc(zh)}</div>`).join('')}</details><details><summary>✍ 常見錯句 → 正確寫法</summary><div class="example-note"><q>Many students uses AI.<br>→ Many students use AI.</q>students 是複數，現在式 use 不加 s。</div><div class="example-note"><q>AI can helps me.<br>→ AI can help me.</q>can 後面接原形 help。</div><div class="example-note"><q>I am agree with this idea.<br>→ I agree with this idea.</q>agree 本身是動詞，不用加 am。</div></details>`;}
+function renderExamples(){const reference=state.topic.exampleId||(state.topic.kind==='story'?'rain':'ai');const e=examples[state.topic.id]||examples[reference]||examples.ai;const refTopic=topics.find(t=>t.id===reference);const area=$('exampleArea');area.className='examples';area.hidden=state.mode==='exam';area.innerHTML=`<details><summary>📖 看完整兩段範例 · ${words(e.paragraphs.join(' '))} words</summary><p class="example-meta">${examples[state.topic.id]?'本題教學範例':'同題型範例：'+esc(refTopic?.title||'觀點說明')+'（非本題答案）'} · 用來學寫法，請用自己的想法重寫。</p><div class="example-text">${e.paragraphs.map((p,i)=>`<p><span class="tag">第 ${i+1} 段</span><br>${esc(p)}</p>`).join('')}</div></details><details><summary>✧ 逐句拆解：範例為什麼這樣寫？</summary>${e.notes.map(([label,en,zh])=>`<div class="example-note"><b>${esc(label)}</b><q>${esc(en)}</q>${esc(zh)}</div>`).join('')}</details><details><summary>✍ 常見錯句 → 正確寫法</summary><div class="example-note"><q>Many students uses AI.<br>→ Many students use AI.</q>students 是複數，現在式 use 不加 s。</div><div class="example-note"><q>AI can helps me.<br>→ AI can help me.</q>can 後面接原形 help。</div><div class="example-note"><q>I am agree with this idea.<br>→ I agree with this idea.</q>agree 本身是動詞，不用加 am。</div></details>`;}
 function pairHtml(x,index,local=false){return `<article class="sentence-pair"><span class="tag">${local?'規則檢查建議':'AI 逐句建議'} · ${esc(x.label||x.type||'表達')}</span><div class="sentence-grid"><div class="original"><span class="tag">你的原句</span><p>${esc(x.original)}</p></div><div class="revised"><span class="tag">建議修改</span><p>${esc(x.revised)}</p></div></div><p class="small"><b>為什麼這樣改：</b>${esc(x.why||x.explanation)}</p>${local?`<button class="secondary" data-apply="${index}">採用這一處修改</button>`:''}</article>`;}
 function step(name){if(name==='review'&&!state.review){notify('先寫一段，再點「完成」取得回饋。');return;}for(const n of ['plan','write','review'])$(n+'Panel').hidden=n!==name;document.querySelectorAll('[data-step]').forEach(b=>b.setAttribute('aria-selected',String(b.dataset.step===name)));if(name==='write'){$('outlinePreview').textContent=fields().map(([k,t])=>`${t}\n${state.plan[k]||'（還沒填，寫作時也可以慢慢想）'}`).join('\n\n');}if(name==='review')renderReview();}
 function updateCounts(){$('wordCount').textContent=words(state.essay);$('paraCount').textContent=paragraphs(state.essay);}
@@ -93,7 +829,7 @@ function applyMode(){const exam=state.mode==='exam';$('mode').value=state.mode;$
 function stopTimer(){clearInterval(ticker);ticker=null;state.timing=null;seconds=Number($('timeBudget').value)*60;$('timerBtn').textContent='開始計時';$('timer').textContent=Math.floor(seconds/60)+':00';$('timer').classList.remove('urgent');$('timeBudget').disabled=false;}
 function tick(){const t=state.timing;if(!t)return;seconds=t.deadline?Math.max(0,Math.ceil((t.deadline-Date.now())/1000)):t.remaining;$('timer').textContent=`${Math.floor(seconds/60).toString().padStart(2,'0')}:${(seconds%60).toString().padStart(2,'0')}`;$('timer').classList.toggle('urgent',seconds<=180);const total=t.total;const phase=seconds<=Math.max(120,Math.round(total*.15))?'最後檢查：切題、時態、單複數、拼字與段落。':seconds>total*.85?'審題與提綱：確認每段任務，挑好理由與例子。':'寫作時間：依提綱完成兩段，先清楚，再修飾。';$('timePhase').textContent=t.expired?'已交卷，限時稿已保留。':phase;if(seconds===0&&!t.expired){t.expired=true;t.deadline=null;t.remaining=0;clearInterval(ticker);ticker=null;$('timerBtn').disabled=true;$('timePhase').textContent='時間到。已保存當時的限時稿；後續修改另行練習。';archive(state.mode==='exam'?'限時交卷':'計時練習到時');applyMode();$('essay').value=state.essay;notify('時間到！當時稿件已保存，現在可以看回饋。');persist();}}
 function startClock(){const total=Number($('timeBudget').value)*60;state.timing={total,remaining:total,deadline:Date.now()+total*1000,startedAt:new Date().toISOString(),expired:false};$('timerBtn').textContent=state.mode==='exam'?'模考進行中':'暫停計時';$('timerBtn').disabled=state.mode==='exam';$('mode').disabled=true;tick();ticker=setInterval(tick,500);applyMode();persist();}
-function changeTopic(t){if(state.essay.trim()||Object.values(state.plan).some(x=>String(x).trim())){if(!confirm('換題前會把目前草稿保存到「我的進步」。要換題嗎？'))return;archive('未完成草稿');}state.topic=t;state.plan={};state.essay='';state.versions=[];state.review=null;hintLevel=0;$('hintBox').hidden=true;stopTimer();$('timerBtn').disabled=false;$('mode').disabled=false;state.mode='practice';renderTopic();applyMode();step('write');persist();}
+function changeTopic(t){if(state.essay.trim()||Object.values(state.plan).some(x=>String(x).trim())){if(!confirm('換題前會把目前草稿保存到「我的進步」。要換題嗎？'))return false;archive('未完成草稿');}state.seenIds=Array.from(new Set([...state.seenIds,state.topic.id,t.id]));state.topic=t;state.plan={};state.essay='';state.versions=[];state.review=null;hintLevel=0;$('hintBox').hidden=true;stopTimer();$('timerBtn').disabled=false;$('mode').disabled=false;state.mode='practice';renderTopic();applyMode();step('write');persist();return true;}
 function archive(status='已保存'){if(!state.essay.trim()&&!Object.values(state.plan).some(x=>String(x).trim())&&status!=='限時交卷')return;const entry={id:crypto.randomUUID(),date:new Date().toISOString(),topic:state.topic,plan:{...state.plan},essay:state.essay,versions:structuredClone(state.versions),review:state.review,status,mode:state.mode,timing:state.timing?{...state.timing}:null};state.history.unshift(entry);state.history=state.history.slice(0,150);persist();}
 async function request(path,body){let base=state.endpoint.trim().replace(/\/$/,'');const url=base+path;const headers={'Content-Type':'application/json'};if(accessCode)headers.Authorization='Bearer '+accessCode;const res=await fetch(url,{method:body?'POST':'GET',headers,body:body?JSON.stringify(body):undefined,signal:AbortSignal.timeout(70000)});let data;try{data=await res.json();}catch{throw Error('目前沒有連接 AI 服務，仍可使用基本檢查。');}if(!res.ok)throw Error(data.error||'服務暫時無法回應，草稿已保留。');return data;}
 async function checkService(){aiReady=false;try{const data=await request('/api/status');aiReady=data.aiReady===true;$('serviceState').textContent=aiReady?'AI 逐句批改已連線':'AI 逐句批改尚未連線';$('liveFeedbackNote').textContent=aiReady?'AI 已連線：交稿後提供原句、修正句與中文文法說明。':'AI 逐句批改尚未連線。目前可檢查字數、段落與部分文法規則。';$('liveFeedbackNote').classList.toggle('connected',aiReady);}catch{$('serviceState').textContent='基本練習可用 · AI 未連線';}}
@@ -103,7 +839,7 @@ function showView(view){$('practiceView').hidden=view!=='practice';$('historyVie
 function renderHistory(){const completed=state.history.filter(x=>['完成練習','限時交卷'].includes(x.status));const revised=completed.filter(x=>(x.versions||[]).length>1&&new Set(x.versions.map(v=>v.essay)).size>1);$('stats').innerHTML=`<div class="stat"><strong>${completed.length}</strong><span>完成練習</span></div><div class="stat"><strong>${revised.length}</strong><span>留下修改版本</span></div><div class="stat"><strong>${completed.filter(x=>x.mode==='exam').length}</strong><span>模考模式練習</span></div>`;$('historyList').innerHTML=state.history.length?state.history.map((h,i)=>`<article class="card history-card"><header><div><span class="tag">${esc(h.status)} · ${esc(h.topic.type||'寫作練習')}</span><h2>${esc(h.topic.title)}</h2></div><small>${esc(new Date(h.date).toLocaleString('zh-TW'))}</small></header><p class="muted small">${words(h.essay)} words · ${(h.versions||[]).length} 次回饋 · ${h.mode==='exam'?'模考':'練習'}模式${h.timing?' · 限時 '+Math.round(h.timing.total/60)+' 分鐘':''}</p><details><summary>看原文與修改紀錄</summary>${(h.versions||[]).map((v,j)=>`<h3 class="small">第 ${j+1} 次提交 · ${v.feedback?.mode==='ai'?'AI 回饋':'基本檢查'}</h3><div class="history-draft">${esc(v.essay)}</div>`).join('')}<h3 class="small">保存時的文章</h3><div class="history-draft">${esc(h.essay)}</div></details><button class="text-btn" data-resume="${i}">接著修改 →</button></article>`).join(''):'<div class="empty"><h2>你的第一步，會留在這裡。</h2><p class="muted">完成一篇練習後，記得按「保存這次練習」。</p></div>';}
 $('planFields').addEventListener('input',e=>{if(e.target.dataset.field){state.plan[e.target.dataset.field]=e.target.value;persist();}});$('planFields').addEventListener('click',e=>{const key=e.target.dataset.hint;if(key){const el=$('help-'+key);el.hidden=!el.hidden;e.target.setAttribute('aria-expanded',String(!el.hidden));}});
 document.querySelectorAll('[data-step]').forEach(b=>b.onclick=()=>step(b.dataset.step));document.querySelectorAll('[data-view]').forEach(b=>b.onclick=()=>showView(b.dataset.view));document.querySelector('.brand').onclick=e=>{e.preventDefault();showView('practice');};$('startWriting').onclick=()=>step('write');$('backPlan').onclick=()=>step('plan');$('reviseBtn').onclick=()=>step('write');$('essay').oninput=()=>{tick();if(state.mode==='exam'&&state.timing?.expired){$('essay').value=state.essay;return;}state.essay=$('essay').value;state.review=null;updateCounts();persist();};
-$('nextTopic').onclick=()=>{const index=topics.findIndex(t=>t.id===state.topic.id);changeTopic(topics[(index+1)%topics.length]);};$('newsTopic').onclick=async()=>{const b=$('newsTopic');b.disabled=true;b.textContent='尋找時事…';try{const r=await request('/api/topic');if(!validTopic(r.topic))throw Error('題目格式不完整，請先使用題庫練習。');changeTopic(r.topic);}catch(e){notify(e.message);}finally{b.disabled=false;b.textContent='時事靈感 ↗';}};
+$('nextTopic').onclick=()=>{let pool=topics.filter(t=>t.id!==state.topic.id&&!state.seenIds.includes(t.id));if(!pool.length)pool=topics.filter(t=>t.id!==state.topic.id);changeTopic(pool[Math.floor(Math.random()*pool.length)]);};$('newsTopic').onclick=async()=>{const b=$('newsTopic');b.disabled=true;b.textContent='尋找時事…';try{const r=await request('/api/topic');if(!validTopic(r.topic))throw Error('題目格式不完整，請先使用題庫練習。');changeTopic(r.topic);}catch(e){notify(e.message);}finally{b.disabled=false;b.textContent='時事靈感 ↗';}};
 $('mode').onchange=()=>{if(state.timing){$('mode').value=state.mode;return;}const exam=$('mode').value==='exam';if(exam&&(state.essay.trim()||Object.values(state.plan).some(x=>String(x).trim()))){if(!confirm('模考必須從空白開始；目前草稿會先保存。確定開始嗎？')){$('mode').value=state.mode;return;}archive('未完成草稿');state.plan={};state.essay='';state.versions=[];state.review=null;renderTopic();step('plan');}state.mode=exam?'exam':'practice';if(exam){state.versions=[];state.review=null;}applyMode();if(exam){notify('模考從審題開始計時，不暫停。請確認裝置鍵盤自動修正也已關閉。');startClock();}else persist();};
 $('timeBudget').onchange=()=>{seconds=Number($('timeBudget').value)*60;$('timer').textContent=$('timeBudget').value+':00';};
 $('afterExam').onclick=()=>{state.mode='practice';stopTimer();$('timerBtn').disabled=false;$('mode').disabled=false;state.review=null;applyMode();persist();notify('現在是考後修改，限時交卷版本已另外保留。');};
@@ -117,4 +853,8 @@ $('importFile').onchange=async e=>{try{const f=e.target.files[0];if(!f)return;if
 $('clearData').onclick=()=>{if(confirm('確定清除本機所有草稿與紀錄？此動作無法復原，請先匯出備份。')){try{localStorage.removeItem(KEY);location.reload();}catch{notify('無法清除瀏覽器資料。');}}};
 renderTopic();step('write');if(state.timing){$('timeBudget').value=String(state.timing.total/60);$('timerBtn').disabled=state.mode==='exam'||state.timing.expired;$('mode').disabled=true;$('timerBtn').textContent=state.timing.deadline?'計時中':'繼續計時';if(state.timing.deadline){tick();if(!state.timing.expired)ticker=setInterval(tick,500);}else tick();}applyMode();checkService();if(memoryOnly)notify('儲存空間不可用，請匯出備份。');
 
-$('reviewContent').addEventListener('click',event=>{const key=event.target.dataset.apply;if(key===undefined)return;if(state.mode==='exam'){notify('先進入考後修改，再採用建議；限時交卷稿不會變更。');return;}const pair=state.review?.localPairs?.[Number(key)];if(!pair||state.essay.slice(pair.start,pair.end)!==pair.original){notify('原句已改動，請重新檢查。');return;}state.essay=state.essay.slice(0,pair.start)+pair.revised+state.essay.slice(pair.end);$('essay').value=state.essay;state.review=null;persist();updateCounts();step('write');notify('已套用這一處修改，其他內容保留。');});</script></body></html>
+$('reviewContent').addEventListener('click',event=>{const key=event.target.dataset.apply;if(key===undefined)return;if(state.mode==='exam'){notify('先進入考後修改，再採用建議；限時交卷稿不會變更。');return;}const pair=state.review?.localPairs?.[Number(key)];if(!pair||state.essay.slice(pair.start,pair.end)!==pair.original){notify('原句已改動，請重新檢查。');return;}state.essay=state.essay.slice(0,pair.start)+pair.revised+state.essay.slice(pair.end);$('essay').value=state.essay;state.review=null;persist();updateCounts();step('write');notify('已套用這一處修改，其他內容保留。');});
+
+function renderTopicPicker(){const q=$('topicSearch').value.trim().toLowerCase();const category=$('topicCategory').value;const finished=new Set(state.history.filter(h=>['完成練習','限時交卷'].includes(h.status)).map(h=>h.topic.id));const list=topics.filter(t=>(!category||t.category===category)&&(!q||[t.title,t.text,t.type,t.subtitle,t.category].join(' ').toLowerCase().includes(q)));$('topicResultCount').textContent=`找到 ${list.length} 題 · 已完成 ${finished.size} 題`;$('topicList').innerHTML=list.length?list.map(t=>`<button class="topic-choice" data-choose-topic="${esc(t.id)}" aria-current="${t.id===state.topic.id}"><span>${esc(t.category)} · ${esc(t.type)}${finished.has(t.id)?' · 已練習':''}${t.id===state.topic.id?' · 目前題目':''}</span><strong>${esc(t.title)}</strong></button>`).join(''):'<p class="muted small">沒有符合的題目，換個關鍵字試試。</p>';}
+$('topicCategory').innerHTML='<option value="">全部主題</option>'+Array.from(new Set(topics.map(t=>t.category))).map(c=>`<option value="${esc(c)}">${esc(c)}</option>`).join('');
+$('browseTopics').onclick=()=>{renderTopicPicker();$('topicPicker').showModal();};$('topicSearch').oninput=renderTopicPicker;$('topicCategory').onchange=renderTopicPicker;$('topicList').onclick=e=>{const button=e.target.closest('[data-choose-topic]');if(!button)return;const t=topics.find(t=>t.id===button.dataset.chooseTopic);if(t.id===state.topic.id){$('topicPicker').close();return;}if(changeTopic(t))$('topicPicker').close();};</script></body></html>
