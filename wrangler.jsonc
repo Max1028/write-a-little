@@ -1,0 +1,10 @@
+{
+  "name": "write-a-little-coach",
+  "main": "worker.js",
+  "compatibility_date": "2026-10-01",
+  "vars": {
+    "GEMINI_MODEL": "gemini-2.5-flash",
+    "MAX_REQUESTS_PER_HOUR": "30",
+    "ALLOWED_ORIGINS": "https://max1028.github.io"
+  }
+}
